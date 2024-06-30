@@ -51,7 +51,7 @@ def submit():
 
 logo = Image.open("Simple-CTK-Program/kundurin.png")
 image = CTkImage(light_image = logo,dark_image = logo, size = (300,300))
-imageLabel = CTkLabel(master = app, image = image)
+imageLabel = CTkLabel(master = app, image = image,text = '')
 imageLabel.pack(side = TOP)
 
 
