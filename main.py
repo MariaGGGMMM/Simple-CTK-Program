@@ -2,7 +2,9 @@ from customtkinter import *
 from func import*
 from password_generator import PasswordGenerator
 from PIL import Image
-
+import requests
+#import db
+#import db_func
 
 pwo = PasswordGenerator()
 
@@ -42,14 +44,18 @@ def submit():
     email = emailEntry.get()
     websit = websiteEntry.get()
 
+    json = {
+        'email': email,
+        'website': websit,
+        'password': password,
+    }
+
+    request = requests.post("http://127.0.0.1:5000/register", json = json )
+
     statusLabel.configure (text = 'well done :3')
+    
 
-
-
-    if email == 'Maria':
-        print('hallo vnvv')
-
-logo = Image.open("Simple-CTK-Program/kundurin.png")
+logo = Image.open("kundurin.png")
 image = CTkImage(light_image = logo,dark_image = logo, size = (300,300))
 imageLabel = CTkLabel(master = app, image = image,text = '')
 imageLabel.pack(side = TOP)

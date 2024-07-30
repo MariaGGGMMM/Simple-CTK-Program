@@ -1,5 +1,5 @@
 from customtkinter import *
-  
+
  
 LARGEFONT =("Verdana", 35)
   
